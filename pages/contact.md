@@ -9,5 +9,5 @@ permalink: "/contact/"
 
 Go ahead and e-mail me: [lambentmanifold@gmail.com][1]
 
-[1] lambentmanifold@gmail.com
+[1]: lambentmanifold@gmail.com
 
