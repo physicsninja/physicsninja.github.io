@@ -3,8 +3,8 @@ layout: page
 show_meta: false
 title: "I made stuff"
 subheadline: "Hopefully it's useful to you"
-header:
-   image_fullwidth: "header_unsplash_5.jpg"
+#header:
+#   image_fullwidth: "header_unsplash_5.jpg"
 permalink: "/projects/"
 ---
 <ul>

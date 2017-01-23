@@ -3,8 +3,8 @@ layout: page
 show_meta: false
 title: "Science and Math"
 subheadline: "Semi-pedagogical writings of Neal Reynolds"
-header:
-   image_fullwidth: "header_unsplash_5.jpg"
+#header:
+#   image_fullwidth: "header_unsplash_5.jpg"
 permalink: "/science/"
 ---
 <ul>
