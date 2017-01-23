@@ -20,7 +20,7 @@ Cornell University has a long and storied tradition that takes place on the last
 
 ## 2014
 
-The beginings were humble and hasty: a chicken wire exoskeleton, stuff with paper and foam for rigidity, and wrapped in packing film as a base for spray paint. What this unicorn lacked in durability, it also lacked in weight, it was carried by only one person despite being 12 feet tall. Unfortunately, time and space are a premium in a research lab and the unicorn was shoved into obscurity until next year.
+The beginings were humble and hasty: a chicken wire exoskeleton, stuffed with paper and foam for rigidity, and wrapped in packing film as a base for spray paint. What this unicorn lacked in durability, it also lacked in weight: it was carried by only one person despite being 12 feet tall. Unfortunately, time and space are at a premium in a research lab and the unicorn was shoved into obscurity until next year.
 
 <figure>
 <img src="{{ site.urlimg }}unicorn/2014unicorn1.jpg">
