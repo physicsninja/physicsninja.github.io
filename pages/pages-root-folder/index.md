@@ -10,7 +10,7 @@ header:
 widget1:
   title: "Blog & Portfolio"
   url: '/blog/'
-  image: hvboardboardwidget.jpg
+  image: HVboardboardwidget.jpg
   text: 'Maybe you came here to read about science and/or things that glow.'
 widget2:
   title: "Bio"
