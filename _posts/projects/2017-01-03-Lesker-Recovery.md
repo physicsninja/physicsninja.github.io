@@ -7,7 +7,7 @@ breadcrumb: true
 tags:
     - Systems
 categories:
-    - science
+    - projects
 image:
     thumb: sputter_recovery/1ingunCornellsquare.jpg
     title: sputter_recovery/1ingunCornellsquare.jpg

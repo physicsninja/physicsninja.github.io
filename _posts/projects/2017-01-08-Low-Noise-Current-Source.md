@@ -9,11 +9,13 @@ tags:
     - Systems
     - ST-FMR
 categories:
-    - science
+    - projects
 image:
 #    thumb: EDCsash/allon.jpg
 #    title: EDCsash/allon-square.jpg
 ---
+
+{% include alert warning='This post is not finished.' %}
 
 One of the techniques that I used semi-frequently in my research is DC-biased Spin Torque Ferromagnetic Resonance (ST-FMR). While a discussion of the technique itself merits a separate post, suffice it to say that one of the chief difficulties associated with this technique is the need for an additional source of DC to add to the GHz AC already present in ST-FMR. 
 
