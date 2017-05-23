@@ -82,6 +82,19 @@ Still moving forward with the thrust of ages, we at last decided to go big or go
 <figcaption> The mylar exterior is stretched over the frame. </figcaption>
 </figure>
 
+Unfortunately, haste and fate conspired against us in our noble endeavor. The wheel mounting strategy resulted in semi-catastrophic bowing of the legs which made distance travel untenable
+
+## 2017
+
+Lessons in statics from the previous year well heeded, we machined a solid steel rod to serve as a continuous axle for the wheels. We also decided to innovate by adding two more heads to make a "cerbericorn"
+
+<figure>
+<img src="{{ site.urlimg }}unicorn/2017unicorn.gif">
+<figcaption> We also bought some unicorn masks to make the atmosphere more festive.</figcaption>
+</figure>
+
+
+
 ## Related projects
 {: .t60 }
 {% include list-posts tag='whimsy' %}

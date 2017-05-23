@@ -5,8 +5,8 @@
 # this work, you have to use › layout: frontpage
 #
 layout: frontpage
-header:
-  image_fullwidth: manifolds.jpg
+#header:
+#  image_fullwidth: manifolds.jpg
 widget1:
   title: "Blog & Portfolio"
   url: '/blog/'
