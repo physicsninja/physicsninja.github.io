@@ -10,6 +10,7 @@ tags:
     - ST-FMR
 categories:
     - science
+    - projects
 image:
 #    thumb: EDCsash/allon.jpg
 #    title: EDCsash/allon-square.jpg
@@ -39,7 +40,7 @@ With this decision made, I faced another problem I hadn't yet encountered in my 
 
 The controller of the current source will be, again, non-other than the venerable arduino microcontroller. In order to control the current using the op-amp I had to find a way to generate a smooth, DC voltage to supply to the op-amp to set the current as described above. At first, I tried to use a digitally controlled potentiometer as the voltage source with the wiper voltage with respect to ground setting the current. I was able to get the potentiometer to behave as expected by itself on a prototyping board, but I couldn't get it to work as expected as part of the isolated circuit.
 
-Then I discovered these motorized linear potentiometers[1]. Oh my. These are so cool and they solve the problem of robustly setting the current by being able to physically change the value a potentiometer. 
+Then I discovered these motorized linear potentiometers[1]. Oh my. These are pretty neat and they solve the problem of robustly setting the current by being able to physically change the value a potentiometer. 
 
 To make the system closed loop, I added in a 10 bit ADC that reads out the voltage across the sensor resistor in the op-amp circuit. This gives me around 10 microamp precision, nominally, given my choice of resistors.
 
@@ -52,13 +53,6 @@ To make the system closed loop, I added in a 10 bit ADC that reads out the volta
 {: .t60 }
 {% include list-posts tag='ST-FMR' %}
 
-[1]: https://www.virtualbox.org/wiki/VirtualBox
-[2]: http://www.dhcs.ca.gov/provgovpart/Pages/Runtime_9.aspx
-[3]: http://www.comtrol.com/rocketport-multi-port-serial-cards/rocketport-universal-pci/rocketport-universal-pci-16port
-[4]: http://www.eterlogic.com/help/vspe/NetworkBridgePage.html
-[5]: http://www.prestwoodboards.com/aspsuite/eboard/thread.asp?MBID=9067
-[6]: {{site.url}}/wildcard
-[7]: http://www.eltima.com/products/serial-port-monitor/
-
+[1]: https://www.sparkfun.com/products/10976
 
 
