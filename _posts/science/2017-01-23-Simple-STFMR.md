@@ -17,7 +17,7 @@ image:
 
 # Introduction
 
-Spin Torque Ferromagnetic Resonance (STFMR or sometimes ST-FMR) is a divine and wonderful technique for extracting the strength of in-plane and out-of-plane torques exerted from some layer onto a magnetic layer. It's utility and broad use comes largely from the fact that it is a resonance phenomenon: the resulting signal is Lorentzian in nature. This is great because it means the signal is relatively easy to spot; and, even though the set of all possible Lorentzians (and their derivatives) do not form a complete, orthogonal basis, they are still pretty constrained from a fitting perspective.
+Spin-Torque Ferromagnetic Resonance (STFMR or sometimes ST-FMR) is a divine and wonderful technique for extracting the strength of in-plane and out-of-plane torques exerted from some layer onto a magnetic layer. It's utility and broad use comes largely from the fact that it is a resonance phenomenon: the resulting signal is Lorentzian in nature. This is great because it means the signal is relatively easy to spot; and, even though the set of all possible Lorentzians (and their derivatives) do not form a complete, orthogonal basis, they are still pretty constrained from a fitting perspective.
 
 # The Setup
 
@@ -25,7 +25,7 @@ In "classical" STFMR, we are looking at the motion of thin (~1-20 nm) film of a 
 
 This thin film of magnet is "grown" (a more physically correct term might be "deposited") either above or below a thin film of the material from which we are trying to extract information about its spin-torque generating properties. This stack of magnet+material-of-interest is then turned into a device which consists of a strip of the stack typically 5-10 $\mu$m wide and long with large metal contact pads at either end to facilitate interaction with the macroscopic experimental set up. The actual device length and width are chosen to minimize in-plane demagnetization fields (<em>i.e.</em> having a low-ish aspect ratio) and to have resistance as close to but greater than 50 Ohms as possible (to maximize RF power transmission). To do the experiment, we apply a radio frequency current at a fixed frequency (1-40 GHz), sweep an external magnetic field, and measure the DC voltage response.
 
-For our analysis we will want to make a sensible choice of coordinates to simplify our lives. From a device perspective, it is natural to put $\hat{z}$ out of the plane and $\hat{y}$ along the direction of current flow through the device. While natural-seeming, a more convenient choice is to put $\hat{y}$ parallel to the magnetization direction, keeping $\hat{z}$ the same (due to the demagnetization field of the thin film keeping the equilibrium magnetization direction in-plane). To keep track of this distinction, the natural device-based coordinates will be primed (<em>i.e.</em> $\hat{y}'$). Figure 1 lays this out graphically. Why make this choice? We expect the magnetization to oscillate around it's equilibrium direction so making its equilibrium direction correspond to an axis simplifies the number of directions we have to consider. To get back to the device coordinates, we'll just need to do a simple rotation matrix transformation (mostly, there are a few extra subtleties).
+For our analysis we will want to make a sensible choice of coordinates to simplify our lives. From a device perspective, it is natural to put $\hat{z}$ out of the plane and $\hat{y}$ along the direction of current flow through the device. While this choice seems somewhat natural, a more convenient choice is to put $\hat{y}$ parallel to the magnetization direction, keeping $\hat{z}$ the same (due to the demagnetization field of the thin film keeping the equilibrium magnetization direction in-plane). To keep track of this distinction, the natural device-based coordinates will be primed (<em>i.e.</em> $\hat{y}'$). Figure 1 lays this out graphically. Why make this choice? We expect the magnetization to oscillate around it's equilibrium direction so making its equilibrium direction correspond to an axis simplifies the number of directions we have to consider. To get back to the device coordinates, we'll just need to do a simple rotation matrix transformation (mostly, there are a few extra subtleties).
 
 <figure>
 <img src="{{ site.urlimg }}STFMR/coordinates.png">
@@ -54,7 +54,7 @@ Maybe this bothers you, the vector isn't really "unit" anymore if this is what w
 
 ## $\tau_{eq}$
 <br>
-The equilibrium torques are just a fancy name for what you probably expected (that is, what you might expect if you spend your days studying magnetism): the magnetization's dipole interaction with the external applied field and the out-of-plane demagnetization field. The first is just $$\gamma\hat{m}\times \overrightarrow{B}_{ext}$$ (where, by our coordinate definition in light of our assumptions, $$\hat{B}_{ext}\equiv\hat{y}$$); the second is $$\gamma M_{eff}\hat{m}\cdot\overline{N}_d$$, where $$\overline{N}_d$$ is the demagnetization tensor and $$M_{eff}$$ is the saturation magnetization plus any out-of-plane anisotropy. For a thin film such as ours, $\overline{N}_d$ has only one non-zero component, $$\overline{N}_{33}$$ (or $$\overline{N}_{zz}$$, more explicitly) = 1. Thus we have $$M_sm_z\hat{z}$$ as our demagnetization equilibrium torque. If we have any magnetocrystalline or other anisotropy, it would enter in here too. Luckily, prudent experimental choices about magnet type and field range mean such complications are typically irrelevant. What happens when our luck runs out is covered in a later post.
+The equilibrium torques are just a fancy name for what you probably expected (that is, what you might expect if you spend your days studying magnetism): the magnetization's dipole interaction with the external applied field and the out-of-plane demagnetization field. The first is just $$\gamma\hat{m}\times \overrightarrow{B}_{ext}$$ (where, by our coordinate definition in light of our assumptions, $$\hat{B}_{ext}\equiv\hat{y}$$); the second is $$\gamma M_{eff}\hat{m}\cdot\overline{N}_d$$, where $$\overline{N}_d$$ is the demagnetization tensor and $$M_{eff}$$ is the saturation magnetization plus any out-of-plane anisotropy. For a thin film such as ours, $\overline{N}_d$ has only one non-zero component, $$\overline{N}_{33}$$ (or $$\overline{N}_{zz}$$, more explicitly) = 1. Thus we have $$\gamma M_sm_z\hat{x}$$ as our demagnetization equilibrium torque. If we have any magnetocrystalline or other anisotropy, it would enter in here too. Luckily, prudent experimental choices about magnet type and field range mean such complications are typically irrelevant. What happens when our luck runs out is covered in a later post.
 
 ## $\tau_{neq}$
 <br>
@@ -69,7 +69,7 @@ $$
 where $w$ is the width of the device, and $I_{RF}$ is the total RF current flowing through device. Of course, while this is literally correct and the resulting torque is $\gamma\overrightarrow{m}\times B_{Oe}$, it is not particularly instructive. Rather, we would like a source-agnostic definition that links current to torque. In that case, we might write
 
 $$
-\tau_{FL}=\frac{\gamma\hbar}{2 e \mu_0 M_s t} J_s
+\tau_{FL}=\frac{\gamma\hbar}{2 e M_s t} J_s
 $$
 
 where $\gamma$ is the magnet's gyromagnetic ratio (typically close to the electron value of about 28 GHz/T), $\hbar$ is Planck's constant, $e$ is the electron charge, $t$ is the thickness of the magnetic layer; and $J_s\equiv\theta_{FL}J_c$ is the spin current produced by the normal charge current $J_c$ with some conversion efficiency $\theta_{FL}$. 
@@ -145,7 +145,7 @@ $$
 m_x=\frac{i\omega\alpha\tau_{FL}-(B_{ext}+M_{eff})\gamma\tau_{FL}+i\omega\tau_{DL}}{\omega^2-\omega_0^2+i\omega\alpha\gamma(2B_{ext}+M_{eff})}
 $$
 
-We're getting there, already we see a basically Lorentzian lineshape starting to form. To smooth things out, lets multiply both the numerator and denominator by the complex conjugate of the denominator and separate the real and imaginary parts
+We're getting there, already we see a basically Lorentzian lineshape starting to form. To simplify things, lets multiply both the numerator and denominator by the complex conjugate of the denominator and separate the real and imaginary parts
 
 $$
 \Re[m_x]=\frac{\omega^2\alpha^2\gamma\tau_{FL}(2B_{ext}+M_{eff})-(B_{ext}+M_{eff})\gamma\tau_{FL}(\omega^2-\omega_0^2)+\omega^2\tau_{DL}\alpha\gamma(2B_{ext}+M_{eff})}{(\omega^2-\omega_0^2)^2+\omega^2\alpha^2\gamma^2(2B_{ext}+M_{eff})^2}
@@ -155,7 +155,7 @@ $$
 \Im[m_x]=\frac{\omega\alpha\tau_{FL}(\omega^2-\omega_0^2)+(B_{ext}+M_{eff})\gamma^2\omega\alpha\tau_{FL}(2B_{ext}+M_{eff})+\omega\tau_{DL}(\omega^2-\omega_0^2)}{(\omega^2-\omega_0^2)^2+\omega^2\alpha^2\gamma^2(2B_{ext}+M_{eff})^2}
 $$
 
-It turns out the real part is actually what we care about and again, we drop the term with $\alpha^2$ to leave us with:
+It turns out the real (in-phase with the driving current) part is actually what we care about and again, we drop the term with $\alpha^2$ to leave us with:
 
 $$
 \Re[m_x]=\frac{-(B_{ext}+M_{eff})\gamma\tau_{FL}(\omega^2-\omega_0^2)+\omega^2\tau_{DL}\alpha\gamma(2B_{ext}+M_{eff})}{(\omega^2-\omega_0^2)^2+\omega^2\alpha^2\gamma^2(2B_{ext}+M_{eff})^2}

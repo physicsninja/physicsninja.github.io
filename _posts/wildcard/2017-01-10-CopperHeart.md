@@ -45,7 +45,7 @@ Video tracing out the end mill path using the rotary base.
 
 The keen-eyed viewer may have noticed pieces of black sheet metal between the clamps and the copper. That was to keep the clamps from creating deep grooves in the soft copper and marring its surface, I wanted it to be super fance.
 
-With the shape now roughly correct, I went to the vise and took a swiss file to the area where the lobes meet to create a sharp v shape. Swiss files are not big and I had to remove a lot of copper so this part took a while, but it was worth it.
+With the shape now roughly correct, I went to the vice and took a swiss file to the area where the lobes meet to create a sharp v shape. Swiss files are not big and I had to remove a lot of copper so this part took a while, but it was worth it.
 
 <figure>
 <img src="{{ site.urlimg }}copperheart/filing_time.jpg">
