@@ -289,6 +289,6 @@ While I hope the prescription for solving things that I have laid out is enough 
 {: .t60 }
 {% include list-posts tag='theory' %}
 
-[1]: {{ site.baseurl }}/Science/Simple-STFMR
+[1]: {{ site.baseurl }}/science/Simple-STFMR
 [2]: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.106.036601
 
