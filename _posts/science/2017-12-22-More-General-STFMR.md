@@ -39,16 +39,7 @@ $$
 
 where $\alpha$ is the phenomenological Gilbert damping parameter, $\omega$ is the frequency of the applied RF current, and $\omega_0$ is the Kittel resonance condition for an in-plane magnetized thin film.
 
-The above result is useful but "phrased" somewhat incorrectly for experimental use. That is, as written, the above equation suggests we should sweep frequency ($\omega$) at a fixed field ($B_{ext}$). Why is that non-ideal? The ferromagnetic resonance condition for a magnet such as permalloy for modest external fields (0.1 T) is on the order of 10 GHz. At these frequencies, lumped element circuit analysis is no longer applicable because the electrical wavelengths are sufficienly short on the scale of the cabling. As a result, there can be substantial frequency depedence to the amount of power that reaches one's device, confounding the resulting measurement. In light of this, the more robust way to perform the experiment is then to apply a fixed RF current and sweep field. Of course, buried in the $\omega_0$ is a field dependence ($\omega_0^2\equiv\gamma\sqrt{B_{ext}(B_{ext}+M_{eff})}$. We could just make that implicit dependence explicit, but that makes the equation less concise and resulting paramater space for the fitting algorithm is vast and full of terrors.
-<div style="text-align:center">
-<figure>
-<img src="https://static1.squarespace.com/static/5987d847be6594b05b40fa90/5988fbc33e00be69ff2e4143/598b522c37c581cb56c0e4d8/1502493906312/beneath_the_surface.jpg" 
-height="256" 
-width="256">
-<figcaption>The fitting algorithm (ship) on the parameter space manifold (terrors). Art copyright Julie Dillon. </figcaption>
-</figure>
-</div>
-Furthermore, substituting in that definition of the resonance condition also shackles us to the Kittel dispersion relation. We might dare to desire a functional form that assumes as little of the dispersion relation as possible.
+The above result is useful but "phrased" somewhat incorrectly for experimental use. That is, as written, the above equation suggests we should sweep frequency ($\omega$) at a fixed field ($B_{ext}$). Why is that non-ideal? The ferromagnetic resonance condition for a magnet such as permalloy for modest external fields (0.1 T) is on the order of 10 GHz. At these frequencies, lumped element circuit analysis is no longer applicable because the electrical wavelengths are sufficienly short on the scale of the cabling. As a result, there can be substantial frequency depedence to the amount of power that reaches one's device, confounding the resulting measurement. In light of this, the more robust way to perform the experiment is then to apply a fixed RF current and sweep field. Of course, buried in the $\omega_0$ is a field dependence ($\omega_0^2\equiv\gamma\sqrt{B_{ext}(B_{ext}+M_{eff})}$. We could just make that implicit dependence explicit, but that makes the equation less concise and resulting paramater space for the fitting algorithm is vast and full of terrors. Furthermore, substituting in that definition of the resonance condition also shackles us to the Kittel dispersion relation. We might dare to desire a functional form that assumes as little of the dispersion relation as possible.
 
 And dare we shall.
 
