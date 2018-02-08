@@ -122,7 +122,7 @@ $$\dot{\hat{m}}=\alpha \hat{m}\times\dot{\hat{m}}+\overrightarrow{\tau_{eq}}+\ov
 Putting everything in:
 
 $$
-\begin{pmatrix} \dot{m}_x \\ 0 \\ \dot{m}_z \end{pmatrix} = \begin{pmatrix} \alpha \dot{m}_z -m_z\omega_2 + \tau_{IP} \\ 0 \\ -\alpha \dot{m}_x +m_x\omega_1 + \tau_{OOP} \end{pmatrix}
+\begin{pmatrix} \dot{m}_x \\ 0 \\ \dot{m}_z \end{pmatrix} = \begin{pmatrix} \alpha \dot{m}_z +m_z\omega_2 + \tau_{IP} \\ 0 \\ -\alpha \dot{m}_x -m_x\omega_1 + \tau_{OOP} \end{pmatrix}
 $$
 
 Already this looks much cleaner than before. Each piece that affects the motion of the magnetization has its own symbol, abstractifying the specifics and (I think) providing an easier route to intuition. 
@@ -132,61 +132,61 @@ Already this looks much cleaner than before. Each piece that affects the motion 
 We need to pick one of $m_x$ or $m_z$ to solve for. Because the piece we care about for electrical detection in a "standard" STFMR experiment is $m_x$, I will solve for that here. We can of course get $m_z$ by plugging $m_x$ into $\dot{m}_x$. There is a problem, however: those pesky time derivatives. Since we have a notion of what the magnetization is going to do (precess), lets take a guess that the solutions are some static amplitude times $e^{-i\omega t}$ where the unadorned $\omega$ is the frequency of the driving torques. This makes the time derivatives trivial, just pulling down $-i\omega$. The remaining factors of $e^{-i\omega t}$ cancel. This leaves
 
 $$
-\begin{pmatrix} -i\omega m_x \\ 0 \\ -i\omega m_z \end{pmatrix} = \begin{pmatrix} -i\omega\alpha m_z -m_z\omega_2 + \tau_{IP} \\ 0 \\ i\omega\alpha m_x +m_x\omega_1 + \tau_{OOP} \end{pmatrix}
+\begin{pmatrix} -i\omega m_x \\ 0 \\ -i\omega m_z \end{pmatrix} = \begin{pmatrix} -i\omega\alpha m_z +m_z\omega_2 + \tau_{IP} \\ 0 \\ i\omega\alpha m_x -m_x\omega_1 + \tau_{OOP} \end{pmatrix}
 $$
 
 Rearranging,
 
 $$
-\begin{pmatrix} -i\omega m_x \\ 0 \\ -i\omega m_z \end{pmatrix} = \begin{pmatrix} -m_z(i\omega\alpha +\omega_2) + \tau_{IP} \\ 0 \\ m_x(i\omega\alpha +\omega_1) + \tau_{OOP} \end{pmatrix}
+\begin{pmatrix} -i\omega m_x \\ 0 \\ -i\omega m_z \end{pmatrix} = \begin{pmatrix} -m_z(i\omega\alpha -\omega_2) + \tau_{IP} \\ 0 \\ m_x(i\omega\alpha -\omega_1) + \tau_{OOP} \end{pmatrix}
 $$
 
 Now we focus on just $m_x$ and plug our equation for $m_z$ into $m_x$
 
 $$
--i\omega m_x = \frac{1}{i\omega}(i\omega\alpha +\omega_2)(m_x(i\omega\alpha+\omega_1)+\tau_{OOP})+\tau_{IP}
+-i\omega m_x = \frac{1}{i\omega}(i\omega\alpha -\omega_2)(m_x(i\omega\alpha-\omega_1)+\tau_{OOP})+\tau_{IP}
 $$
 
-Distributing the $(i\omega\alpha +\omega_2)$
+Distributing the $(i\omega\alpha -\omega_2)$
 
 $$
--i\omega m_x = \frac{1}{i\omega}m_x(i\omega\alpha+\omega_1)(i\omega\alpha +\omega_2)+\frac{1}{i\omega}\tau_{OOP}(i\omega\alpha +\omega_2)+\tau_{IP}
+-i\omega m_x = \frac{1}{i\omega}m_x(i\omega\alpha-\omega_1)(i\omega\alpha -\omega_2)+\frac{1}{i\omega}\tau_{OOP}(i\omega\alpha -\omega_2)+\tau_{IP}
 $$
 
 Collecting all of the $m_x$ terms
 
 $$
--m_x(i\omega +\frac{1}{i\omega}(i\omega\alpha+\omega_1)(i\omega\alpha +\omega_2)) = \frac{1}{i\omega}\tau_{OOP}(i\omega\alpha +\omega_2)+\tau_{IP}
+-m_x(i\omega +\frac{1}{i\omega}(i\omega\alpha-\omega_1)(i\omega\alpha -\omega_2)) = \frac{1}{i\omega}\tau_{OOP}(i\omega\alpha -\omega_2)+\tau_{IP}
 $$
 
 Multiplying through by $i\omega$
 
 $$
--m_x(-\omega^2 +(i\omega\alpha+\omega_1)(i\omega\alpha +\omega_2)) = \tau_{OOP}(i\omega\alpha +\omega_2)+i\omega\tau_{IP}
+-m_x(-\omega^2 +(i\omega\alpha-\omega_1)(i\omega\alpha -\omega_2)) = \tau_{OOP}(i\omega\alpha -\omega_2)+i\omega\tau_{IP}
 $$
 
 Further expanding
 
 $$
--m_x(-\omega^2 -\omega^2\alpha^2+i\omega\alpha(\omega_1+\omega_2) + \omega_1\omega_2) = \tau_{OOP}(i\omega\alpha +\omega_2)+i\omega\tau_{IP}
+-m_x(-\omega^2 -\omega^2\alpha^2-i\omega\alpha(\omega_1+\omega_2) + \omega_1\omega_2) = \tau_{OOP}(i\omega\alpha -\omega_2)+i\omega\tau_{IP}
 $$
 
 Isolating $m_x$
 
 $$
-m_x = \frac{\tau_{OOP}(i\omega\alpha +\omega_2)+i\omega\tau_{IP}}{\omega^2(1+\alpha^2)-i\omega\alpha(\omega_1+\omega_2) - \omega_1\omega_2}
+m_x = \frac{\tau_{OOP}(i\omega\alpha -\omega_2)+i\omega\tau_{IP}}{\omega^2(1+\alpha^2)+i\omega\alpha(\omega_1+\omega_2) - \omega_1\omega_2}
 $$
 
 Now, here we are going to make an approximation (alas). The gilbert damping parameter, $\alpha$, is typically around $10^{-2}$ or less in commonly used thin film magnet choices. Thus $\alpha^2$ is going to be $\approx 10^{-4}$ or less which is very small compared to 1 so $(1+\alpha^2)\approx 1$. Rearranging after that:
 
 $$
-m_x = \frac{\tau_{OOP}(i\omega\alpha +\omega_2)+i\omega\tau_{IP}}{(\omega^2-\omega_1\omega_2) -i\omega\alpha(\omega_1+\omega_2) }
+m_x = \frac{\tau_{OOP}(i\omega\alpha -\omega_2)+i\omega\tau_{IP}}{(\omega^2-\omega_1\omega_2) +i\omega\alpha(\omega_1+\omega_2) }
 $$
 
 Now let's make the denominator purely real by multiplying both numerator and denominator by the complex conjugate of the denominator
 
 $$
-m_x = \frac{((\omega^2-\omega_1\omega_2) +i\omega\alpha(\omega_1+\omega_2))(\tau_{OOP}(i\omega\alpha +\omega_2)+i\omega\tau_{IP})}{(\omega^2-\omega_1\omega_2)^2 +\omega^2\alpha^2(\omega_1+\omega_2)^2 }
+m_x = \frac{((\omega^2-\omega_1\omega_2) -i\omega\alpha(\omega_1+\omega_2))(\tau_{OOP}(i\omega\alpha -\omega_2)+i\omega\tau_{IP})}{(\omega^2-\omega_1\omega_2)^2 +\omega^2\alpha^2(\omega_1+\omega_2)^2 }
 $$
 
 ### Prescient Definitions
@@ -194,7 +194,7 @@ $$
 Let us pause a moment and consider what we have. The denominator has the form of a lorentzian denominator so let's make that explicit. We will define $\omega_0^2\equiv\omega_1\omega_2$ and $\omega^+\equiv\omega_1+\omega_2$. This gives:
 
 $$
-m_x = \frac{((\omega^2-\omega_0^2) +i\omega\alpha\omega^+)(\tau_{OOP}(i\omega\alpha +\omega_2)+i\omega\tau_{IP})}{(\omega^2-\omega_0^2)^2 +\omega^2\alpha^2(\omega^+)^2 }
+m_x = \frac{((\omega^2-\omega_0^2) -i\omega\alpha\omega^+)(\tau_{OOP}(i\omega\alpha -\omega_2)+i\omega\tau_{IP})}{(\omega^2-\omega_0^2)^2 +\omega^2\alpha^2(\omega^+)^2 }
 $$
 
 Clearly, $\omega_0$ is the resonant frequency of the system. It is also the geometric mean of $\omega_1$ and $\omega_2$. This makes sense, these are the two characteristic frequencies of this system. This is also why I stated early that it would be instructive to do the derivation this way, this result falls out manifestly. That is not to say that the same thing didn't happen in the previous derivation, but it was not quite clear that the components of the resonant frequency were somewhat deep statements about the system. 
@@ -203,13 +203,13 @@ Clearly, $\omega_0$ is the resonant frequency of the system. It is also the geom
 Before we get to the agressively tedious part, we should extract the part that we can actually detect. As a reminder, the way we detect this signal is by the oscillation of the m_x causing a change in resistance. That mixes with the driving current to give a DC voltage and a voltage at twice the frequency. Thus we need the part of $m_x$ that is in-phase with the driving current, the real part. Let's get that piece now:
 
 $$
-\Re[m_x] = \frac{((\omega^2-\omega_0^2)\omega_2-\alpha^2\omega^2\omega^+)\tau_{OOP} -\alpha\omega^2\omega^+\tau_{IP}}{(\omega^2-\omega_0^2)^2 +\omega^2\alpha^2(\omega^+)^2 }
+\Re[m_x] = \frac{(-(\omega^2-\omega_0^2)\omega_2-\alpha^2\omega^2\omega^+)\tau_{OOP} -\alpha\omega^2\omega^+\tau_{IP}}{(\omega^2-\omega_0^2)^2 +\omega^2\alpha^2(\omega^+)^2 }
 $$
 
 You may have noticed it earlier and it is perhaps glaringly obvious at this point, but I have not made an assumption normally done at this stage or earlier in other derivations: that $i\omega\alpha \ll \omega_2$ in the part multiplying $\tau_{OOP}$ in the numerator. I did the same thing in my previous post , but I dismissed it without this lengthy exposition. It is pretty typically a good assumption, especially in the simple case, and the modifications to the lineshape are small. I leave it in at this stage in and comment on it in case a system with crazy anistropies changes the validity of the inequality just mentioned. To really get a really good handle on things lets rewrite:
 
 $$
-\Re[m_x] = \underbrace{\frac{(\omega^2-\omega_0^2)\omega_2\tau_{OOP}}{(\omega^2-\omega_0^2)^2 +\omega^2\alpha^2(\omega^+)^2 }}_{\text{Antisymmetric Lorentzian}} -\underbrace{\frac{\alpha\omega^2\omega^+(\alpha\tau_{OOP} +\tau_{IP})}{(\omega^2-\omega_0^2)^2 +\omega^2\alpha^2(\omega^+)^2 }}_{\text{Symmetric Lorentzian}}
+\Re[m_x] = \underbrace{\frac{-(\omega^2-\omega_0^2)\omega_2\tau_{OOP}}{(\omega^2-\omega_0^2)^2 +\omega^2\alpha^2(\omega^+)^2 }}_{\text{Antisymmetric Lorentzian}} -\underbrace{\frac{\alpha\omega^2\omega^+(\alpha\tau_{OOP} +\tau_{IP})}{(\omega^2-\omega_0^2)^2 +\omega^2\alpha^2(\omega^+)^2 }}_{\text{Symmetric Lorentzian}}
 $$
 
 Now we see that the resulting signal should be the sum of a symmetric and antisymmetric Lorentzian, and that if the stars align (figuratively) then the out of plane torque could lead to a symmetric component (literally).
