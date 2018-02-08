@@ -108,7 +108,7 @@ We will also neglect the $\hat{y}$ for the same reason as above.
 As is the theme of this post, we do not care about the explicit form for these torques in trying to solve the LLGS equation. If you need to actually plug in realistic numbers you can find the explicit forms in the previous post. All we need to note for our purposes is that the most general form for the torques is one that acts out of the plane of the thin film we are considering, $\tau_{OOP}\hat{z}$, and one that acts in plane but perpendicular to the magnetization direction, $\tau_{IP} \hat{x}$. Thus
 
 $$
-\overrightarrow{\tau}_{neq} = \begin{pmatrix} \tau_x\\ 0 \\ \tau_z \end{pmatrix}
+\overrightarrow{\tau}_{neq} = \begin{pmatrix} \tau_{IP}\\ 0 \\ \tau_{OOP} \end{pmatrix}
 $$
 
 ## Solving the LLGS equation
