@@ -200,13 +200,13 @@ $$
 Clearly, $\omega_0$ is the resonant frequency of the system. It is also the geometric mean of $\omega_1$ and $\omega_2$. This makes sense, these are the two characteristic frequencies of this system. This is also why I stated early that it would be instructive to do the derivation this way, this result falls out manifestly. That is not to say that the same thing didn't happen in the previous derivation, but it was not quite clear that the components of the resonant frequency were somewhat deep statements about the system. 
 
 ### The in-phase component
-Before we get to the agressively tedious part, we should extract the part that we can actually detect. As a reminder, the way we detect this signal, is by the oscillation of the m_x causing a change in resistance. That mixes with the driving current to give a DC voltage and a voltage at twice the frequency. Thus we need the part of $m_x$ that is in-phase with the driving current, the real part. Let's get that piece now:
+Before we get to the agressively tedious part, we should extract the part that we can actually detect. As a reminder, the way we detect this signal is by the oscillation of the m_x causing a change in resistance. That mixes with the driving current to give a DC voltage and a voltage at twice the frequency. Thus we need the part of $m_x$ that is in-phase with the driving current, the real part. Let's get that piece now:
 
 $$
 \Re[m_x] = \frac{((\omega^2-\omega_0^2)\omega_2-\alpha^2\omega^2\omega^+)\tau_{OOP} -\alpha\omega^2\omega^+\tau_{IP}}{(\omega^2-\omega_0^2)^2 +\omega^2\alpha^2(\omega^+)^2 }
 $$
 
-You may have noticed it earlier and it is perhaps glaringly obvious at this point, but I have not made an assumption normally done at this stage or earlier in other derivations: that $i\omega\alpha \ll \omega_2$ in the part multiplying $\tau_{OOP}$ in the numerator. I did the same thing in my previous post , but I dismissed it without this lengthy exposition. It is pretty typically a good assumption, especially in the simple case, and the modifications to the linewidth are small. I leave it in at this stage in and comment on it in case a system with crazy anistropies changes the validity of the inequality just mentioned. To really get a really good handle on things lets rewrite:
+You may have noticed it earlier and it is perhaps glaringly obvious at this point, but I have not made an assumption normally done at this stage or earlier in other derivations: that $i\omega\alpha \ll \omega_2$ in the part multiplying $\tau_{OOP}$ in the numerator. I did the same thing in my previous post , but I dismissed it without this lengthy exposition. It is pretty typically a good assumption, especially in the simple case, and the modifications to the lineshape are small. I leave it in at this stage in and comment on it in case a system with crazy anistropies changes the validity of the inequality just mentioned. To really get a really good handle on things lets rewrite:
 
 $$
 \Re[m_x] = \underbrace{\frac{(\omega^2-\omega_0^2)\omega_2\tau_{OOP}}{(\omega^2-\omega_0^2)^2 +\omega^2\alpha^2(\omega^+)^2 }}_{\text{Antisymmetric Lorentzian}} -\underbrace{\frac{\alpha\omega^2\omega^+(\alpha\tau_{OOP} +\tau_{IP})}{(\omega^2-\omega_0^2)^2 +\omega^2\alpha^2(\omega^+)^2 }}_{\text{Symmetric Lorentzian}}
@@ -216,7 +216,7 @@ Now we see that the resulting signal should be the sum of a symmetric and antisy
 
 ### Half the Battle
 
-So we made it, but did we really? The above equation is still "phrased" wrong, everything is in terms of frequencies. We want something in terms of $B_{ext}$ because that is going to be the parameter most sensible to sweep in our experiments. We still don't want to assume anything about the $B$-dependence of $\omega_1$ or $\omega_2$, though. So, we taylor expand about the resonant field. That's where our signal will peak and because the linewidth should be pretty sharp, we can get away with linear order terms only to excellent approximation.
+So we made it, but did we really? The above equation is still "phrased" wrong, everything is in terms of frequencies. We want something in terms of $B_{ext}$ because that is going to be the parameter most sensible to sweep in our experiments. We still don't want to assume anything about the $B$-dependence of $\omega_1$ or $\omega_2$, though. So, we Taylor expand about the resonant field. That's where our signal will peak and because the linewidth should be pretty sharp, we can get away with linear order terms only to excellent approximation.
 
 $$
 \omega_0^2\approx \left.\omega_0^2\right|_{B=B_0}+(B-B_0)\left.\frac{d (\omega_0^2)}{dB}\right|_{B=B_0}
@@ -242,7 +242,7 @@ $$
 \omega_{B0}^+\equiv\left.\omega^+\right|_{B=B_0}
 $$
 
-To be more accurate, we would then to do the same taylor expansion for the remaining "bare" $\omega^+$ terms in $\Re[m_x]$ as well as the $\omega_2$ next to the $\tau_{OOP}$. However, given the fact that $\alpha$ is typically small (we predicated several previous assumptions on that basis already), the Lorentzian line shape is pretty sharply peaked. In that regard, we can to a reasonable approximation treat it as a delta function about resonant field, $B_0$. Thus the "bare" $\omega^+$'s become $\omega_{B0}^+$'s and the $\omega_2$ becomes $\omega_{2,B0}$.
+To be more accurate, we would then to do the same Taylor expansion for the remaining "bare" $\omega^+$ terms in $\Re[m_x]$ as well as the $\omega_2$ next to the $\tau_{OOP}$. However, given the fact that $\alpha$ is typically small (we predicated several previous assumptions on that basis already), the Lorentzian line shape is pretty sharply peaked. In that regard, we can to a reasonable approximation treat it as a delta function about resonant field, $B_0$. Thus the "bare" $\omega^+$'s become $\omega_{B0}^+$'s and the $\omega_2$ becomes $\omega_{2,B0}$.
 
 ## Victory
 
