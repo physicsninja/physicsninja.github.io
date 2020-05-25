@@ -1,5 +1,5 @@
 - name: GitHub
-  url: http://github.com/physicsninja
+  url: https://github.com/physicsninja
   class: icon-github
   title: ""
 
@@ -9,7 +9,7 @@
 #  title: "Videos, Video-Anleitungen und Filme von Phlow auf YouTube"
 
 - name: Twitter
-  url: http://twitter.com/nealdreynolds
+  url: https://twitter.com/nealdreynolds
   class: icon-twitter
   title: ""
 
