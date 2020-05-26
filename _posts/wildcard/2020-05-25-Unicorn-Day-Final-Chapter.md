@@ -67,6 +67,12 @@ Using all of the experience from the previous four unicorns and with the aid of 
 
 Thus resolved, I sculpted a CAD model of a horse to get a sense of the amount of sheet metal I would need to cover the unicorn. I then exported this model to an STL format so I could use a 3d printing slicing program to create a set of crossections of the "ribs" over which to lay the metal. With a surface area in hand, I then tried to find aluminum sheet at a reasonable price to coat the unicorn. It turns out there was a surplus aluminum company just across the Canadian border from upstate New York so I drove to 4 hours to Canada to pick up 30 lbs of aluminum sheet metal. My original plan was to use large approximately square sheets to create a blocky sort of skin, but this Canadian seller happened to have this very reasonably priced, beautiful lot of anodized gold aluminum strips with a shiny finish. This was a fortuitous turn of events.
 
+
+<figure>
+<img src="{{ site.urlimg }}unicorn/unicornbodysidemore.pdf">
+<figcaption> The rough CAD of the relevant parts of the Unicorn.</figcaption>
+</figure>
+
 Next came the ribs:
 
 <figure>
