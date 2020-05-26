@@ -1,0 +1,114 @@
+I"�$<p>In the summer of 2015 I went to one of largest electronic dance music festivals in the world: Electric Daisy Carnival: Las Vegas or EDC. This festival takes place from sunset to sunrise for three days starting with Friday Night and takes place just outside the city in the Motorsports Speedway complex.</p>
+
+<p>For the uninitiated, dance music festivals like this are known for the crazy outfits and props (called totems) people wear and bring. Given this I jumped at the opportunity to create something extravagant for the festival and ultimately settled on a sash. The sash form was chosen because it didn’t restrict movement (critical for 12 hours of dancing) and wasn’t smothering (it ended up being 80 degrees F even at 3 AM).</p>
+
+<h2 id="design-goals">Design Goals</h2>
+<p>One of the most dissapointing things I have found with off-the-shelf glow-wear is that it tends to be digital in its glowing (all on or all off) or disappointingly closed source (one cannot add new patterns or reactivity). Both of these things are understandable, but I certainly thought I could do better. Unfortunately, what off-the-shelf components lack in aesthetic flexibility, they make up for it with physical flexibility and durability, qualities to admired when designing dance-wear. To that end I had several goals in mind:</p>
+
+<ul>
+  <li>Simple bluetooth control for pattern changing on the the fly</li>
+  <li>Largely analog control of light sources</li>
+  <li>Minmal components</li>
+  <li>Microphone for dynamic reactivity</li>
+  <li>Arduino/Genuino control of everything</li>
+  <li>3.3 V logic and power to simplify battery options</li>
+</ul>
+
+<h2 id="parts-list">Parts list</h2>
+<p>With all of this in mind I decided on using fiber-optic cloth with a high-powered LED and strips of electroluminescent (EL) wire and tape that I had laying around. In particular:</p>
+
+<h3 id="high-voltage">High Voltage</h3>
+<ul>
+  <li>EL wire: I suspect I got some from both adafruit and sparkfun, I have a lot</li>
+  <li><a href="https://www.sparkfun.com/products/10796">EL tape</a></li>
+  <li><a href="https://www.sparkfun.com/products/10201">3 volt Inverter</a></li>
+  <li>HV controller board I made for another project based off of sparkfun’s <a href="https://www.sparkfun.com/products/10878">EL escudo dos</a></li>
+</ul>
+
+<h3 id="fiber-optic-cloth">Fiber-optic cloth</h3>
+<ul>
+  <li><a href="https://www.sparkfun.com/products/12712">Fiber-optic cloth</a></li>
+  <li><a href="https://www.sparkfun.com/products/8718">3 W RGB LED</a></li>
+  <li>Aluminum optical coupler/heatsink briskly machined from scrap aluminum</li>
+</ul>
+
+<h3 id="control">Control</h3>
+<ul>
+  <li><a href="https://www.sparkfun.com/products/312">Darlington Transistors</a></li>
+  <li><a href="https://www.sparkfun.com/products/11114">3.3 V Arduino Pro Mini</a></li>
+  <li>Various connectors and wire</li>
+</ul>
+
+<h2 id="construction">Construction</h2>
+
+<p>In the past my endeavors have been limited by my sewing capability, which was minimal. This year I was lucky enough to be able to collaborate with two Cornell students (Eric Beaudette and Lina Sanchez-Botero) to make a quality sash. The front of the sash is low-weight, black canvas while the back is the optical fiber cloth. Sewing the optical fiber cloth is alway a dicey proposition because you will likely cut the fiber and break the light path in doing so. However, since the back of the sash was all optical fiber cloth, it wasn’t an issue this time around. There is also a small strap that wraps around my waist to secure the sash further.</p>
+
+<p>With a quality substrate I took to populating the electronics. Below are the schematics and PCB layout of the custom board I designed in Eagle for controlling the high voltage required for the EL wire with an arduino. The trick is to optically isolate the 3.3 V logic of the arduino from the HV using optotriacs which are themselves controlling beefier triacs. The circuit and components were lovingly designed by sparkfun electronics and I used their Eagle files for their <a href="https://www.sparkfun.com/products/10878">EL escudo dos</a> as a starting point. Space was at a premium to I decided to make my own rather than use theirs, especially since I wanted to add a header for a cheap wireless module for making a set of interactive garments.</p>
+
+<figure>
+  <div class="row">
+  <div class="large-6 columns">
+      <img src="https://physicsninja.github.io/images/EDCsash/HVboardschematic.jpg" />
+  </div>
+  <div class="large-6 columns">
+      <img src="https://physicsninja.github.io/images/EDCsash/HVboardboard.jpg" />
+  </div>
+</div>
+  <figcaption>Schematic (left) and PCB (right) used to control the EL wire and LED. The boad is designed to accept and arduino pro mini and optionally a nRF24L01+ 2.4 GHz radio module (8 pin SPI breakout on top right of board schematic.</figcaption>
+</figure>
+
+<p>With the high voltage circuit locked down I ran the wires for each EL wire strip up the inside of the sash using a common return to save on wire bundle girth (images below). With the hook up wire in place, I proceded to solder the connection to the EL wire and sew the EL wire into the garment. Soldering to EL wire is a delicate and often frustrating operation. Fortunately, by this point in my life I’ve prepared at least a hundred of these joints and can do it with pretty high fidelity, but I still leave some extra EL wire just in case. To cap the free ends of the EL wire to prevent accidental shocks to my skin will dancing, I used a dab of hot glue.</p>
+
+<figure>
+<div class="row">
+  <div class="large-6 columns">
+      <img src="https://physicsninja.github.io/images/EDCsash/circuit_raw.jpg" />
+  </div>
+  <div class="large-6 columns">
+      <img src="https://physicsninja.github.io/images/EDCsash/insideview.jpg" />
+  </div>
+</div>
+  <figurecaption> (Left) a close up of the populated PCB with arduino pro mini installed and wire hooked up. (Right) a full shot of the innards of the sash.</figurecaption>
+</figure>
+
+<p>Striving for some semblance of professionalism, red wires are the raw input from the battery, black is the battery ground, and yellow is both HV and data signal. It turns out this seemingly dicey conflation of meaning to a single color (which was driven by wire color on hand) is not the worst choice. It is easy to tell the wires apart upon inspection.</p>
+
+<p>Control of the 3 W LED is acheived using by the arduino to turn on and off a darlington transitor acting as a switch for each color channel in the RGB led. I ran out of PWM pins on the arduino so each color channel is all on or all off with the current set by a static resistor. The coupling to the fiber optics is just a piece of aluminum with hole just large enough to accomodate the fiber bundle counterbored on one side large enough to inscribe the square die of the 3 W RGB LED. Two tapped holes lie on either side of the LED side to receive screws to clamp down LED and improve thermal contact. The fiber bundle is gently taped in place with yellow Kapton tape (image below).</p>
+
+<figure>
+<img src="https://physicsninja.github.io/images/EDCsash/ledadapter-zoomed.jpg" />
+<figurecaption>(Center) The aluminum coupling with the fiber bundle entering from the top, and one of coupling screws visible on the left on the bottom. (Left) One of the two "potted brick" style 3.3 V HV inverters used to drive the EL wire.</figurecaption>
+</figure>
+
+<p>As a final touch, I ran an <a href="https://www.adafruit.com/product/1713">electret microphone</a> up the inside the sash so it protrudes slightly just above the top piece of EL wire. Using this wonderful <a href="http://wiki.openmusiclabs.com/wiki/ArduinoFHT">fast Hartley transform (FHT)</a> library for arduino, I implemented an equalizer mode with automagic level adjustment to maximize motion of the lights. For switching between equalizer, random, all on, and all off modes on the fly, I hooked up a cheap bluetooth the serial module I found and used a bluetooth serial emulator phone app to send ascii characters to change the modes. Not particularly elegant, but very robust and quick to code.</p>
+
+<p>The final product yields something like this when it’s on:</p>
+
+<p><img src="https://physicsninja.github.io/images/EDCsash/eldoe-scaled.jpg" /></p>
+
+<p>In random mode:</p>
+
+<iframe width="646" height="364" src="https://physicsninja.github.io/images//EDCsash/EDCsashnosound.mp4" frameborder="0" allowfullscreen=""></iframe>
+
+<p>In equalizer mode:</p>
+
+<iframe width="646" height="364" src="https://physicsninja.github.io/images//EDCsash/EDCsashnosoundequalizer.mp4" frameborder="0" allowfullscreen=""></iframe>
+
+<p>NOTE: There was music playing when both of the above videos were recorded, but because I don’t wish to test the waters of copyright, I have removed the audio. I also apologize for the video orientation.</p>
+
+<p>If you think that my eagle files might be of use to you in your own projects here is a link to the <a href="http://physicsninja.github.io/images/EDCsash/NealEL2MOCOPTOS.sch">schematic</a> and <a href="http://physicsninja.github.io/images/EDCsash/NealEL2MOCOPTOS.brd">board</a>.</p>
+
+<h2 class="t60" id="related-projects">Related projects</h2>
+
+<ul class="side-nav">
+
+  
+
+    
+      <li><a href="http://localhost:4000/projects/EDC-Sash/">Luminescent Clothing &middot; <strong>Electric Daisy Carnival Sash</strong></a></li>
+    
+
+  
+</ul>
+
+:ET
