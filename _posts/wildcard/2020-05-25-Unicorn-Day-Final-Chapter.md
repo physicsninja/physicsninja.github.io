@@ -104,7 +104,7 @@ Doing this unicorn right also meant that we had to address another issue we had 
 <figcaption> Neck joint. We tested it's strength by someone hanging from the neck. </figcaption>
 </figure>
 
-Then we had to figure out how to get the metal on. One of my friends had a brilliant flash of inspiration and went with a herring bone pattern to apply the metal. It was perfect so we ran with it.
+Then we had to figure out how to get the metal on. One of them members of the unicorn team had a brilliant flash of inspiration and went with a herring bone pattern to apply the metal. It was perfect so we ran with it.
 
 
 <figure>
