@@ -147,7 +147,7 @@ Then we had to figure out how to get the metal on. One of my friends had a brill
 </figure>
 
 <figure>
-<img src="{{ site.urlimg }}unicorn/Profile1.jpg">
+<img src="{{ site.urlimg }}unicorn/Selfie1.jpg">
 <figcaption>  </figcaption>
 </figure>
 
