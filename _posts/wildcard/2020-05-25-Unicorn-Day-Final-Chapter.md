@@ -50,11 +50,11 @@ The unicorns of the next three years were all shadows of the true form of the vi
 
 As all attempts at the expression of the form of a thing inevitably are, the first three attempts were but the haziest of outlines. The construction of each, however, brought me inches closer to the form of the truth:
 
-	* The 2015 Unicorns were a good test of the switch from chicken wire exoskeleton to wooden endo skeleton on a small scale. 
+- The 2015 Unicorns were a good test of the switch from chicken wire exoskeleton to wooden endo skeleton on a small scale. 
 
-	* The 2016 Unicorn revealed the issues with scaling up in weight and size as well as gave us an idea of what would physically be possible to construct. 
+- The 2016 Unicorn revealed the issues with scaling up in weight and size as well as gave us an idea of what would physically be possible to construct. 
 
-	* The 2017 Unicorn revealed the increased time cost associated with a task of this mamoth undertaking and how to secure the appropriate regulatory approvals from building stakeholders.
+- The 2017 Unicorn revealed the increased time cost associated with a task of this mamoth undertaking and how to secure the appropriate regulatory approvals from building stakeholders.
 
 # Piercing the Veil 
 
