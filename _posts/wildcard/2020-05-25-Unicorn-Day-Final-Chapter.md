@@ -165,8 +165,7 @@ The final product:
 <figcaption>  </figcaption>
 </figure>
 
-
-
+It this unicorn the form of the robot unicorn Vision I expressed earlier? No, of course not. To quote Vince Lombardi, "Perfection is not attainable, but if we chase perfection we can catch excellence." I think that is what I acheived here, excellence. There will always be flourishes I could have added with unlimited time and resources, but I had neither. No, at the conclusion of this project I had no regrets, I felt I had acheived my vision and helped create something that all those who joined in the effort could be truly proud of and that I could pass on the torch and the experience to a new graduate student to do the same.
 
 ## Related projects
 {: .t60 }
