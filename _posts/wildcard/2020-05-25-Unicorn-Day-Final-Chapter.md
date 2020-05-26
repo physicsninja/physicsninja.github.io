@@ -69,7 +69,7 @@ Thus resolved, I sculpted a CAD model of a horse to get a sense of the amount of
 
 
 <figure>
-<img src="{{ site.urlimg }}unicorn/unicornbodysidemore.pdf">
+<img src="{{ site.urlimg }}unicorn/unicornbodysidemore.jpg">
 <figcaption> The rough CAD of the relevant parts of the Unicorn.</figcaption>
 </figure>
 
